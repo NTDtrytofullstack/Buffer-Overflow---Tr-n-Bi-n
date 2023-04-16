@@ -73,6 +73,21 @@ Nhiều ngôn ngữ lập trình khác cung cấp việc kiểm tra tại thời
 - Chống tràn bộ đệm trên stack: Stack – smashing protection là kỹ thuật dùng để phát hiện các hiện tượng tràn bộ đệm phổ biến nhất. Kỹ thuật này kiểm tra xem stack đã bị sửa đổi hay chưa khi một hàm trả về. Nếu stack đã bị sửa đổi, chương trình kết thúc bằng một lỗi segmentation fault.Chế độ Data Execution Prevention (cấm thực thi dữ liệu) của Microsoft bảo vệ các con trỏ và không cho chúng bị ghi đè.Có thể bảo vệ stack bằng cách phân tán stack thành hai phần, một phần dành cho dữ liệu và một phần dành cho các bước trả về hàm, sự phân chia này được dùng trong ngôn ngữ Forth.một phần dành cho các bước trả về hàm, sự phân chia này được dùng trong ngôn ngữ Forth.
 - Bảo vệ không gian thực thi: Kỹ thuật này ngăn chặn việc thực thi mã tại stack hay heap. Hacker có thể sử dụng tràn bộ đệm để chèn một đoạn mã tùy ý vào bộ nhớ của chương trình, với việc bảo vệ không gian thực thi thì mọi cố gắng chạy đoạn mã đó sẽ gây ra một ngoại lệ. Một số CPU hỗ trợ tính năng có tin bit NX (No eXecute) hoặc bit XD (eXecute Disable). Khi kết hợp với phần mềm các tính năng này có thể được dùng để đánh dấu những trang dữ liệu (chẳng hạn như các trang chứa stack và heap) là đọc được nhưng không thực hiện được. Ngẫu nhiên hóa sơ đồ không gian địa chỉ (Address space layout randomization ASLR): Một tính năng an ninh máy tính có liên quan đến việc sắp xếp các vùng dữ liệu quan trọng (thường bao gồm nơi chứa mã thực thi và vị trí các thư viện, heap và stack) một cách ngẫu nhiên trong không gian địa chỉ của một tiến trình.
 - Kiểm tra sâu đối với gói tin: (deep packet inspection - DPI) có thể phát hiện việc cố gắng khai thác lỗi tràn bộ đệm từ xa ngay từ biên giới mạng. Các kỹ thuật này có khả năng ngăn chặn các gói tin có chứa chữ ký của một vụ tấn công đã biết hoặc chứa các chuỗi dài các lệnh No- Operation (NOP – lệnh rỗng không làm gì). Việc rà quét gói tin không phải một phương pháp hiệu quả vì nó chỉ có thể ngăn chặn các cuộc tấn công đã biết và có nhiều cách để mã hóa một lệnh NOP.
+---
+# Phần Tự Hành.
+## Ví dụ 1:
+![image](https://user-images.githubusercontent.com/130078745/232309697-edcc8860-db41-4a63-8bb3-a02cdbf35cdd.png)
+![image](https://user-images.githubusercontent.com/130078745/232313668-8fabef7e-07f2-423a-a097-04fab0f40c8f.png)
+![image](https://user-images.githubusercontent.com/130078745/232313977-54c6ae45-c571-4f57-add9-173b6077003e.png)
+![image](https://user-images.githubusercontent.com/130078745/232314498-c112f697-7174-4bf2-96b3-9d52e1c0802a.png)
+## Ví dụ 2:
+![image](https://user-images.githubusercontent.com/130078745/232316322-fe7e24d5-1555-45a4-a504-3c8fe641b339.png)
+![image](https://user-images.githubusercontent.com/130078745/232316340-5ee13e63-3567-43dc-9e5a-5d5f7eb850ad.png)
+![image](https://user-images.githubusercontent.com/130078745/232316661-9f07df21-27e3-47f1-82bf-8b9b7a2cdd8e.png)
+![image](https://user-images.githubusercontent.com/130078745/232318588-cf59e6c8-e153-481d-b270-b99d48878c80.png)
+![image](https://user-images.githubusercontent.com/130078745/232318793-59742baf-d70c-4898-b5b3-7e0d39f40a33.png)
+
+
 
 
 
